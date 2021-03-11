@@ -1,0 +1,26 @@
+
+class Solution{
+	public:
+		vector<string> AllPossibleStrings(string s){
+		    // Code here
+		    int l = s.length();
+		    int power_set = pow(2,l);
+		    	vector<string> v;
+		    	vector<string> v1;
+		    for(int counter=0;counter<power_set;counter++)
+		    {
+		        string s1="e";
+		        for(int j=0;j<l;j++)
+		        {
+		            if(counter&(1<<j))
+		            s1 += s[j];
+		        }
+		    
+		        v.push_back(s1);
+		    }
+		    sort(v.begin(),v.end());
+		    for(int i=1;i<v.size();i++)
+		    v1.push_back(v[i].substr(1,v[i].length()-1));
+		    return v1;
+		}
+};

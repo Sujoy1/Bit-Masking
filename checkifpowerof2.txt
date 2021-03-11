@@ -1,0 +1,13 @@
+long long setBits(long long n)
+{
+    if(n==0)
+    return 0;
+    else
+    return 1+setBits(n&(n-1));
+}
+bool isPowerofTwo(long long n){
+    
+    // Your code here   
+    return (setBits(n)==1);
+
+}

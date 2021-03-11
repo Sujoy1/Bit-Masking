@@ -1,0 +1,30 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+typedef unordered_map<ll,ll> uml;
+int calc(int b)
+{
+    int count=0;
+    while(b)
+    {
+       b=b>>1;
+        count++;
+    }
+    return count-1;
+}
+int main()
+
+{
+    int a=6;
+    int b=a;
+    int sum=0;
+    while(b>0)
+    {
+       int l = calc(b);
+        sum += a<<l;
+        b=b-pow(2,l);
+    }
+    cout<<sum;
+    return 0;
+}

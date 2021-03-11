@@ -1,0 +1,14 @@
+int setBits(int N)
+{
+    if(N==0)
+    return 0;
+    return 1+setBits(N&(N-1));
+    
+}
+int countBitsFlip(int a, int b){
+    
+    // Your logic here
+   int c = a ^ b;
+    return setBits(c);
+    
+}

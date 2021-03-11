@@ -1,0 +1,27 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+typedef unordered_map<ll,ll> uml;
+
+int main()
+
+{
+   int a=50;
+   int b=6;
+   cin>>a>>b;
+   int k,quotient=0;
+   while(a>=b)
+   {
+       k=1;
+       while((b<<k)<=a)
+       {
+           k++;
+       }
+       quotient += pow(2,(k-1));
+       a -= b<<(k-1); 
+   }
+   cout<<"quotient is: "<<quotient<<endl;
+   cout<<"remainder is: "<<a<<endl;
+    return 0;
+}
